@@ -1,0 +1,47 @@
+.app {
+	max-width: 200px;
+	margin: 10rem auto 0 auto;
+	padding: 1rem;
+	text-align: center;
+	background-color: darkgrey;
+	border: none;
+	border-radius: 5px;
+}
+
+.output {
+	max-width: 100%;
+	word-wrap: break-word;
+	margin-bottom: 1rem;
+	padding: 0 5px;
+	text-align: right;
+	background-color: #dcdcdc;
+	font-size: 18px;
+	line-height: 30px;
+	border: none;
+	border-radius: 5px;
+}
+.output-result {
+	color: OrangeRed;
+}
+
+.btn {
+	width: 2rem;
+	margin: 3px;
+	font-size: 18px;
+	cursor: pointer;
+	background-color: #dcdcdc;
+	border: solid 2px #dcdcdc;
+	border-radius: 3px;
+}
+
+.btn:active {
+	border: none;
+}
+
+.btn-operation {
+	background-color: orange;
+	border: solid 2px orange;
+}
+.btn-clean {
+	width: 4.4rem;
+}

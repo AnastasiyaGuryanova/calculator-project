@@ -10,6 +10,21 @@ export const App = () => {
 	const [isOperator1, setIsOperator1] = useState(false);
 	const [result, setResult] = useState('');
 
+	const culc = (operator) => {
+		let calcResult;
+		switch (operator) {
+			case '+':
+				calcResult = Number(operand1) + Number(operand2);
+				break;
+			case '-':
+				calcResult = Number(operand1) - Number(operand2);
+				break;
+			default:
+				calcResult = 0;
+		}
+		return String(calcResult);
+	};
+
 	const clickNumber = (value) => {
 		if (isOperator1) {
 			Number(operand2) === 0 ? setOperand2(value) : setOperand2(operand2 + value);
@@ -27,16 +42,16 @@ export const App = () => {
 				setResult('');
 				setOperand2('');
 			} else if (Number(operand2) > 0 || operand2 === '0') {
-				// eslint-disable-next-line
-				setOperand1(eval(operand1 + operator + operand2));
+				let calcResult = culc(operator);
+				setOperand1(calcResult);
 				setOperator(value);
 				setOperand2('');
 			}
 			setOperator(value);
 		} else if (value === '=') {
 			if (operand2 === '') return;
-			// eslint-disable-next-line
-			setResult(eval(operand1 + operator + operand2));
+			let calcResult = culc(operator);
+			setResult(calcResult);
 		} else {
 			setOperand1('0');
 			setOperand2('');
